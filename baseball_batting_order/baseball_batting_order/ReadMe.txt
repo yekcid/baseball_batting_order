@@ -24,17 +24,14 @@ baseball_batting_order.vcxproj.filters
 baseball_batting_order.cpp
     This is the main application source file.
 
-/////////////////////////////////////////////////////////////////////////////
-Other standard files:
 
-StdAfx.h, StdAfx.cpp
-    These files are used to build a precompiled header (PCH) file
-    named baseball_batting_order.pch and a precompiled types file named StdAfx.obj.
+The solution reads in a comma separated text file of batting stats with the following data:
 
-/////////////////////////////////////////////////////////////////////////////
-Other notes:
-
-AppWizard uses "TODO:" comments to indicate parts of the source code you
-should add to or customize.
-
-/////////////////////////////////////////////////////////////////////////////
+Player Name,AB,BB,H,1B,2B,3B,HR,RBIs,Runs,SF,HBPK,SB,AVG,OBP,SLB,OPS
+The batting order is generated as such from the data:
+1. SB leader (that is not present in positions 3-5) with the highest batting AVG.
+2. Player with the highest OBP (that is not present in positions 3-5)
+3. Player with the higest OPS
+4. Player with the 2nd higest OPS
+5. Player with the 3rd higest OPS
+6.-last position is filled in by the remaining players in the list with starting from highest to lowest AVG
